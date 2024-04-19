@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investmatter</title>
+    <link href="css/custom.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+      /* For responsiveness use these media queries */
+    @media screen and (max-width: 576px) {
+/* Styles for small screen devices to a maximum width of 576px */
+.custom-footer {
+  margin-top: 3%;
+  box-sizing: border-box;
+  background-color: #002349;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+    }
+      /*Change this font using google fonts "Use Poppins"*/
+      *{
+      font-family: poppins;
+      }
+        /* Custom CSS for the background image section */
+        body, html {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+        .bg-image {
+            background-image: url('images/Background.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 140vh;
+            transition: background-image 0.5s ease-in-out;
+        }
+        /* Add more background images here */
+        .bg-image.image1 {
+            background-image: url('images/Background.jpg');
+        }
+
+        .bg-image.image2 {
+            background-image: url('images/Background2.jpg');
+        }
+        .bg-image.default {
+            background-image: url('images/Background.jpg');
+        }
+        
+        @media (max-width: 767px) {
+            .bg-image {
+                min-height: 70vh;
+            }
+        }
+        #imagetext {
+          font-size: 30px;
+          color: #002349;
+          text-align: right;
+        }
+        .gridtitle {
+          font-size: 32px;
+          text-align: center;
+          padding: 10px;
+        }
+        .text-overlay {
+            color: black;
+            font-size: 24px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: right;
+        }
+        .read-more-btn {
+            background-color: #002349;
+            color: white;
+        }
+        .col {
+          text-align: center;
+          padding: 15px;
+        }
+        .box {
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            transition: transform 0.3s; 
+            border: 1.5px solid #957C3D; 
+            padding: 15px;
+        }
+        .grid-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        #top {
+          margin-bottom: 30px;
+        }
+        #competence-image {
+          margin-bottom: 20px;
+        }
+        .box:hover {
+            transform: translateY(-10px); /* Move the box higher on hover */
+            color: #002349;
+        }
+        .box-text {
+            font-size: 1.2rem; /* Adjust text size as needed */
+        }
+        h1 {
+          font-size: 30px;
+        }
+        /* Grey background for the horizontal text */
+        .horizontal-text-container {
+            position: relative;
+            background-color: #002349; /* Grey background color */
+            text-align: center;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+
+        /* Style for the horizontal text */
+        .horizontal-text {
+            display: inline-block;
+            padding: 10px;
+            font-weight: bolder;
+            font-size: 18px; /* Adjust text size as needed */
+            color: white; /* Text color */
+            margin: 0 20px; /* Add spacing between text items */
+        }
+     
+        #projectInvestmentText {
+          font-size: 32px;
+        }
+        .image-text {
+          font-size: 80px;
+          color: #002349;
+          text-align: right;
+        }
+        .faq-question {
+            cursor: pointer;
+            color: #000;
+            font-size: medium;
+        }
+
+        .faq-question:hover {
+            color: #002349; /* Change to blue on hover */
+        }
+
+        .plus-minus-toggle::before {
+            content: "+"; /* Plus sign initially */
+            font-size: 24px;
+            right: 0;
+            color: black;
+            float: right; /* Move to the right */  
+        }
+
+        .collapsed .plus-minus-toggle::before {
+            content: "-"; /* Minus sign when collapsed */
+        }
+
+        .faq-container {
+            border: 1px solid black;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid black; /* Add border below each question */
+            padding: px 0; /* Add padding below each question */
+        }
+        .faq-image {
+            height: 440px;
+            width: 100%;
+        }
+        #faqText {
+          font-size: 15px;
+        }
+        .faq-question:focus {
+            outline: none;
+        }
+        .btn:focus {
+            outline: none;
+            box-shadow: none;
+        }
+        @media (max-width: 767px) {
+            .faq-image {
+                display: none;
+            }
+        }
+        @media (max-width: 768px) {
+        /* Adjust font size and alignment for smaller screens */
+        .image-text {
+        font-size: 40px;
+        text-align: right;
+         }
+        }
+       
+        #projectInvestTextButton {
+          background-color: #957C3D;
+          color: white;
+          font-size: 18px;
+          padding: 10px 20px;
+          border-radius: 15px;
+          text-decoration: none; /* Remove underlines from the button */
+        }
+        .service-button{
+  border-color: #002349;
+  color: #002349;
+}
+.service-button:hover{
+  background-color: #002349;
+  color: #ffffff;
+}
+    /*Custom footer */
+        .custom-footer {
+      margin-top: 3%;
+      box-sizing: border-box;
+      background-color: #002349;
+      color: white;
+      display: flex;
+      gap: 5%;
+      flex-wrap: wrap; /* Allow columns to wrap on small screens */
+      border-bottom: 2px solid #ffffff;
+    }
+ .footer-item h3{
+  font-size: 18px;
+ }
+    .footer-item {
+      margin-top: 1.5%;
+    }
+
+    .item-1 {
+      list-style: none;
+    }
+
+    .item-2 {
+      margin-bottom: 2%;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+    .copyright {
+      background-color: #002349;
+            text-align: center;
+            color: #ffffff; /* White text color */
+            padding: 10px 0;
+        }
+.feed-container{
+  display: flex;
+  flex-direction: row;
+  gap:5%;
+}
+.feed{
+display: flex;
+flex-direction: column;
+align-items: center;
+border: #000;
+border-style: solid;
+width:30%;
+height:auto;
+}
+
+.feed-image{
+  padding-top: 2%;
+  width:25vw;
+  height:auto;
+}
+.feed-head{
+  text-align: center;
+}
+.feed-details{
+  text-align: start;
+}
+.feed-date-time{
+  font-style: italic;
+}
+
+
+    </style>
+    <script>
+
+        // Define an array of background images
+    const backgroundImages = [
+        'image1',
+        'image2',
+        // Add more image class names here as needed
+    ];
+
+    let currentIndex = 0;
+
+    // Function to change the background image
+    function changeBackgroundImage() {
+        // Remove the current background image class
+        $('.bg-image').removeClass(backgroundImages[currentIndex]);
+        // Increment the index
+        currentIndex = (currentIndex + 1) % backgroundImages.length;
+        // Add the new background image class
+        $('.bg-image').addClass(backgroundImages[currentIndex]);
+    }
+
+    // Change the background image every 8 seconds (8000 milliseconds)
+    setInterval(changeBackgroundImage, 10000);
+
+    // Initial background image
+    $('.bg-image').addClass('default');
+    </script>
+</head>
+<body>
+
+<!-- Navigation section -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid ms-4">
+        <a class="navbar-brand " href="#">Investmatter Group</a>
+        <button class="navbar-toggler"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon bg-light"></span>
+        </button>
+        <div class="container-fluid mx-2">
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link active " aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item ms-3">
+              <a class="nav-link" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item ms-3">
+              <a class="nav-link" href="services.html">Services</a>
+            </li>
+            <li class="nav-item ms-3">
+              <a class="nav-link" href="blog.php">Blog</a>
+            </li>
+            <li class="nav-item ms-3">
+              <a class="nav-link" href="contacts.html">Contact Us</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav me-4">
+              <li class="nav-item">
+                  <a href="contacts.html" class="btn  service-button"
+                  style="--bs-btn-padding-y: .38rem; --bs-btn-padding-x: .95rem; --bs-btn-font-size: .95rem; --bs-btn-border-radius:.75rem;">Get Started</a>
+                </li>
+          </ul>
+        </div>
+      </div>
+</nav>
+
+<!-- Background image section with text overlay -->
+<section class="bg-image d-flex justify-content-end align-items-center">
+    <div class="text-overlay text-white">
+        <h1 class="image-text">Why Invest<br>In Tanzania?</h1>
+        <a href="#gridtitle" class="btn service-button">Read More</a>
+    </div>
+</section>
+<div id="imageSlider"></div>
+<div class="gridtitle">
+  <h1 id="gridtitle">REASONS TO INVEST IN TANZANIA</h1>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-4 animate-pop">
+          <div class="box">
+            <h4>Government Policies</h4>
+              <img src="images/pen.png" height="60px">
+              
+              <p class="box-text">
+                The Tanzanian government has made reforms to the investment climate.This include streamlining the business registration process.
+              </p>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="box">
+            <h4>Large Market Size</h4>
+              <img src="images/cart.png" height="60px">
+              <p class="box-text">
+                  Tanzania's population statistics data of 2022
+                  shows the country is occupied with 61 million people
+                  who can be turned into market.
+              </p>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="box">
+            <h4>Strong Financial Support</h4>
+              <img src="images/bank.png" height="60px">
+              <p class="box-text">
+                 In Tanzania there are 42+ Financial Institutions which are supportive
+                 to provide services needed for the 
+                 investment.
+              </p>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<div class="gridtitle">
+  <h1 id="gridtitle">OUR AREA OF COMPETENCE</h1>
+</div>
+<div class="container" id="competence-grid">
+    <div class="row">
+        <div class="col grid-item">
+          <h3>Renewable Energy</h3>
+            <img src="images/sun.png" alt="" height="60px" id="competence-image">
+            <p id="top">Tanzania has abundant renewable energy resources, including solar, wind, and hydropower.
+              The government has set a target of generating 50% of the country's electricity from renewable sources by 2030.
+            </p>
+            <h3>Agriculture Sector</h3>
+            <img src="images/tractor.png" alt="" height="60px" id="competence-image">
+            <p>The agriculture sector is the backbone of the Tanzanian economy. The sector employs over 70% of the Tanzanian workforce and contributes over 25% of the country's GDP.
+            </p>
+        </div>
+        <div class="col grid-item">
+          <h3>Real Estate</h3>
+            <img src="images/building.png" alt="" height="60px" id="competence-image">
+            <p id="top"> The sector of this sector is being driven by
+              the growing population of Tanzania,
+              the increasing urbanization of the population,
+              the rising incomes of Tanzanians,
+            </p>
+            <h3>Venture Capital Fund</h3>
+            <img src="images/bank.png" alt="" height="60px" id="competence-image">
+            <p>In 2022, Tanzanian startups raised over $100 million in venture capital funding, the driving force for growth is
+              the increasing number of startups in Tanzania.
+
+            </p>
+        </div>
+    </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="container-fluid">
+        <div class="horizontal-text-container">
+          <p class="horizontal-text" id="projectInvestmentText">Looking for a potential project to invest?</p>
+          <a href="#" class="mb-2 btn btn-outline-warning" >Get Started</a>
+        </div>
+    </div>
+    </div>
+  </div>
+</div>
+<div class="container mt-3">
+  <div class="gridtitle">
+    <h1 id="gridtitle">WHAT OUR CUSTOMERS ASK</h1>
+  </div>
+</div>
+<div class="container mt-3">
+  <div class="row">
+      <div class="col-md-8">
+          <h2>Frequently Asked Questions</h2>
+          <h1 id="faqText">This is where you will get the most asked question which help you to get the information you need</h1>
+          <div class="faq-container">
+              <!-- FAQ items -->
+              <div class="faq-item">
+                  <h5 class="faq-question">
+                      <p>Question: How can I invest in Tanzania?
+                      <button class="btn btn-link plus-minus-toggle" data-toggle="collapse" data-target="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1"></button>
+                    </p>
+                  </h5>
+                  <div id="faqCollapse1" class="collapse">
+                      <div class="card-body">
+                          Answer: 
+                          <p>Direct investment: You can set up your own business in Tanzania or invest in an existing Tanzanian business.</p>
+                          <p>Portfolio investment: You can invest in Tanzanian stocks, bonds, and other financial instruments.</p>
+                          <p>Indirect investment: You can invest in Tanzania through mutual funds or other investment vehicles that invest in Tanzanian assets.</p>
+
+                      </div>
+                  </div>
+              </div>
+              <div class="faq-item">
+                <h5 class="faq-question">
+                    <p>Question: What are the tax implications for foreign investors in Tanzania?
+                      <button class="btn btn-link plus-minus-toggle" data-toggle="collapse" data-target="#faqCollapse5" aria-expanded="false" aria-controls="faqCollapse5"></button>
+                    </p>
+                </h5>
+                <div id="faqCollapse5" class="collapse">
+                    <div class="card-body">
+                        Answer: 
+                        <p>According to TRA in 2023, Foreign investors in Tanzania are subject to the same taxes as Tanzanian citizens. The corporate tax rate in Tanzania is 30%. There is also a value-added tax (VAT) of 18%.</p>
+                    </div>
+                </div>
+              </div> 
+              
+
+              <div class="faq-item">
+                <h5 class="faq-question">
+                    <p>Question: What are the sectors that are open to foreign investment?
+                    <button class="btn btn-link plus-minus-toggle" data-toggle="collapse" data-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3"></button>
+                  </p>
+                </h5>
+                <div id="faqCollapse3" class="collapse">
+                    <div class="card-body">
+                        Answer: 
+                        <p>Agriculture: Agriculture is the backbone of the Tanzanian economy and employs over 70% of the population. There are opportunities for investment in the entire agricultural value chain, from production to processing to marketing.</p>
+                        <p>Tourism: Tanzania is a popular tourist destination, known for its beautiful beaches, wildlife, and national parks. There are opportunities for investment in the tourism sector, such as hotels, lodges, and tour operators.</p>
+                        <p>Mining: Tanzania is rich in mineral resources, including gold, copper, and nickel. There are opportunities for investment in all aspects of the mining sector, from exploration to production to processing.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+              <h5 class="faq-question">
+                  <p>Question: What are the benefits of investing in Tanzania?
+                  <button class="btn btn-link plus-minus-toggle" data-toggle="collapse" data-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4"></button>
+                </p>
+              </h5>
+              <div id="faqCollapse4" class="collapse">
+                  <div class="card-body">
+                      Answer: 
+                      <p>Access to a growing market: Tanzania has a population of over 60 million people, which is expected to reach 100 million by 2050. This provides a large and growing market for goods and services.</p>
+<p>Abundant natural resources: Tanzania is rich in natural resources, including minerals, land, and wildlife. This provides opportunities for investment in a wide range of sectors, such as mining, agriculture, and tourism.</p>
+<p>Favorable government policies: The Tanzanian government is committed to attracting foreign investment and has made significant reforms to the investment climate in recent years. These reforms include streamlining the business registration process, reducing taxes, and providing incentives for foreign investors.</p>
+                  </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <h5 class="faq-question">
+                  <p>Question: Where can I get more information about investing in Tanzania?
+                  <button class="btn btn-link plus-minus-toggle" data-toggle="collapse" data-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2"></button>
+                </p>
+              </h5>
+              <div id="faqCollapse2" class="collapse">
+                  <div class="card-body">
+                      Answer: 
+                      <p>The Tanzania Investment Centre (TIC) is the government agency responsible for promoting and attracting foreign investment to Tanzania. The TIC website provides information on the investment climate in Tanzania, the investment process, and investment opportunities.</p>
+                  </div>
+              </div>
+          </div>
+              <!-- Add more FAQ items here -->
+    </div>
+</div>
+      <div class="col-md-4 border-left">
+          <img src="images/faqs.jpg" alt="Investment Image" class="img-fluid faq-image">
+      </div>
+  </div>
+  </div>
+</div>
+
+  <!--Footer Section-->
+  <div class="container-fluid custom-footer">
+    <!--Contact and Address section-->
+    <div class="footer-item contact-info">
+      <ul class="item-1">
+        <h3>INVESTMATTER GROUP <br>OF COMPANIES </h3>
+        <li class="item-2"><a href="#"><img src="images/phone.png" alt="0654 997 111" height="18px"></a> 0654 997 111
+        </li>
+        <li class="item-2"><a href="#"><img src="images/location.png" alt="Dar es Salaam, Tanzania" height="18px"></a>
+          Dar es Salaam, Tanzania</li>
+        <li class="item-2"><a href="#"><img src="images/clock.png" alt="07:00AM - 19:00PM" height="18px"></a> 07:00AM -
+          19:00PM</li>
+      </ul>
+    </div>
+<!--Social media accounts section-->
+    <div class="footer-item">
+      <ul class="item-1">
+        <h3>Follow Us</h3>
+        <li class="item-2"><a href="#"><img src="images/facebook.png" alt="Facebook" height="18px"></a> Facebook</li>
+        <li class="item-2"><a href="#"><img src="images/twitter.png" alt="Twitter" height="18px"></a> Twitter</li>
+        <li class="item-2"><a href="#"><img src="images/linkedin.png" alt="linkedin" height="18px"></a> Linkedin</li>
+      </ul>
+    </div>
+<!--Quick links section-->
+    <div class="footer-item">
+      <ul class="item-1">
+        <h3>Quick Links</h3>
+        <li class="item-2"><a href="index.html">Home</a></li>
+        <li class="item-2"><a href="about.html">About</a></li>
+        <li class="item-2"><a href="services.html">Services</a></li>
+      </ul>
+    </div>
+    <!--Special links section-->
+    <div class="footer-item">
+      <ul class="item-1">
+        <h3>Special Links</h3>
+        <li class="item-2"><a href="contacts.html">Start Investment</a></li>
+        <li class="item-2"><a href="index.html">FAQs</a></li>
+        <li class="item-2"><a href="contacts.html">Online Support</a></li>
+      </ul>
+    </div>
+  </div>
+  <!--Copyright section-->
+  <div class="copyright">
+    &copy; 2023 InvestMatter Group of Companies
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous">
+  </script>
+<!-- Include Bootstrap JS and jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</body>
+</html>
+<!--
+  <div class="gridtitle">
+  <h1 id="gridtitle">NUMBERS NEVER LIE</h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="container-fluid">
+        <div class="horizontal-text-container">
+          <p class="horizontal-text">5+<br>Years of Experience</p>
+          
+          <p class="horizontal-text">30+<br>No of Projects Done</p>
+          
+          <p class="horizontal-text">10+<br>No of Investors</p>
+        </div>
+    </div>
+  </div>
+</div>
+-->
